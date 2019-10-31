@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ORDER_FOOD</title>
+	<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+     .checked {
+        color: orange;
+      }
+
+      blink {
+        animation: blinker 0.9s linear infinite;
+        color: red;
+        font-family: Courier New;
+        
+        }
+       @keyframes blinker 
+        {  
+        50% { opacity: 0; }
+        }
+</style>
+</head>
+<body>
+<section style='background-color:red;'>
+ <center>
+   <img src='logo.webp' class='logo'>
+ </center>
+ <center>
+   <div class="superadmin-head">Superadmin Pannel</div><hr width="50%">
+</center>
+
+
+  
+    <div >
+  <nav class="navbar navbar-expand-lg navbar-light" style='background-color:red;padding: 0.3% 5%'>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+  <div style='margin:0 auto'>
+    <ul class="navbar-nav mr-auto" style='font-family: coiny;'>
+      <li class="nav-item active one" >
+        <a class="nav-link one" href="#" style='color:white;' onclick="addAdmin()">Add Admin <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='deleteAdmin()'>Delete Admin</a>
+      </li>
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='bookedItems()'>Booked Items</a>
+      </li>
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='showSuppliers()'>Suppliers</a>
+      </li>
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='showUsers()'>Users</a>
+      </li>
+
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='showAdmin()'>Admin</a>
+      </li>
+      
+      <li class="nav-item one">
+        <a class="nav-link" href="/logout" style='color:white;font-family: Courier New '>Logout</a>
+      </li>
+      
+
+
+    </ul>
+   </div>
+  </div>
+</nav>
+</div>
+  
+
+</section>
+
+
+
+
+<!--seeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-->
+
+
+
+
+<section style='margin-top: 30px;'>
+  <div class='container-fluid'>
+    <div class='row'>
+        <div class='col-lg-3 shadow' >
+          <center>
+            <a  href="#" style='color:blue;font-weight: bold;' onclick='showdeletedUser()'>Deleted User</a>
+            <a  href="#" style='color:blue;font-weight: bold;margin-left: 10px;' onclick='showdeletedSupplier()'>Deleted Supplier</a></br></br>
+            <img src='adcart.jpg' class='img-thumbnail'>
+          <div class='superadmin-work-welcome'><blink>Welcome Mr Satya</blink></div>
+        </center>
+        </div>
+
+        <div class='col-lg-9'>
+          
+        <!--ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss--> 
+            <div id='addadmin'>
+              <div class='add-admin-head' style="color:black">Add Admin</div><hr width="50%" color="black">
+               <div style="margin-left: 30px">
+                <form class='form-signin' style="margin-top:40px">
+                  <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+                    <input id="fullname1" type="text" name="fullname1" style="width:80%;outline:none;" class="input-field" placeholder="Enter Full Name of admin" required autofocus>
+                    </br>
+                  </div></br> 
+
+                  <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input id="email1" type="email" name="email1" style="width:80%;outline:none;" class="input-field" placeholder="Enter email of admin" required autofocus>
+                    </br>
+                  </div></br>
+                   
+                   <div class="input-container">
+                   <i class="fa fa-address-book icon"></i><select class='input-field' id="select_menu" name="select_menu" required autofocus style="width: 80%;" >
+
+                          <option value="varanasi">Varanasi</option>
+                          <option value="patna">Patna</option>
+                          <option value="ranchi">Ranchi</option>
+                          <option value="jamshedpur">Jamshedpur</option>
+                        </select></br></br>
+                    </div></br>
+                  <div class="input-container">
+                    <i class="fa fa-address-book icon"></i>
+                    <input id="address1" type="text" name="address1" style="width:80%;outline:none;" class="input-field" placeholder="Enter full address of admin" required autofocus>
+                    </br>
+                  </div></br>
+
+                  <div class="input-container">
+                    <i class="fa fa-phone icon"></i>
+                    <input id="contact1" type="number" name="contact1" style="width:80%;outline:none;" class="input-field" placeholder="Enter contacts of admin" required autofocus>
+                    </br>
+                  </div></br>
+
+                  <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input id="password1" type="password" name="password1" style="width:80%;outline:none;" class="input-field" placeholder="Set password of admin" required autofocus>
+                    </br>
+                  </div></br>
+
+                  <div style='margin-left: 50px;'>
+                      <button style="background-color:green;" class="btn  btn-primary " type="submit" name="button" value="register"  id="submit11" onclick="registerAdmin()">Add Admin</button>
+
+                       <input type="reset" value="Reset" style="background-color:lightgreen;margin-left: 30px;" class="btn btn-success "> 
+                  </div>
+
+
+                        
+               </form></div>
+            </div>
+           <!--add admin close   hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+          <!--removeAdmin start nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnre-->
+
+            <div id="removeadmin">
+              <div class='remove-admin-head'>Remove Admin</div>
+                <form class='form-signin'>
+                     <div class="input-container">
+                       <i class="fa fa-key icon"></i>
+                        <input id="id3" type="text" name="id3" style="width:80%;outline:none;" class="input-field" placeholder="Enter the id of Admin" required autofocus>
+                       </br>
+                      </div></br>
+
+                      <div style='margin-left: 50px;'>
+                        <center><button style="background-color:green;" class="btn  btn-primary " type="submit" name="button" value="register"  id="submit11" onclick="removeAdmin()">Remove Admin</button></center>
+                     </div>
+                </form>
+            </div>
+
+          <!--removeadmin close hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->  
+
+
+          <!--show admin starts ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+                <div id='showadmin'>
+                    <div class="table-responsive">   
+                  <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                     <div  class="row">
+                       <div class="col-lg-4" style="background-color: green;">
+                        <h5 style="color:white;margin-left: 20px;margin-top: 20px;">List OF Admin</h5>
+                       </div>
+                      <div class="col-lg-8">
+                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                     </div>
+                      </div>
+                           
+                      <thead style="background-color: lightgreen;" >
+                                 <tr>
+                                  <th scope="col">id</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Address</th>
+                                  <th scope="col">Password</th>
+                                  <th scope="col">City</th>
+                                  
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist3.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         <td><%=foundlist3[i].id %></td>
+                                         <td><%=foundlist3[i].fullname %></td>
+                                         <td><%=foundlist3[i].contact %></td>
+                                         <td><%=foundlist3[i].email %></td>
+                                         <td><%=foundlist3[i].address %></td>
+                                        <td><%=foundlist3[i].password %></td>
+                                        <td><%=foundlist3[i].city %></td>
+                                       </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                </div>
+                </div>
+                
+          <!--show admin close hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+          <!--show booked items start sssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+               <div id='showbookeditem'>
+                   <div class="table-responsive">   
+                  <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                     <div  class="row">
+                       <div class="col-lg-4" style="background-color: green;">
+                        <h5 style="color:white;margin-left: 20px;margin-top: 20px;">Booked Items</h5>
+                       </div>
+                      <div class="col-lg-8">
+                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                     </div>
+                      </div>
+                           
+                      <thead style="background-color: lightgreen;" >
+                                 <tr>
+                                   
+                                   <th scope="col">Item ID</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">Address</th>
+                                  <th scope="col">quantity</th>
+                                  <th scope="col">modeOF_Payment</th>
+                                  <th scope="col">city</th>
+                                   <th scope="col">Resturant Name</th>
+                                   <th scope="col">Cost</th>
+                                  <th scope="col">Item Name</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Total Bill</th>
+                                  <th scope="col">Order Date</th>
+                                   <th scope="col">Order Time</th>
+                                   <th scope="col">payment_id</th>
+                                   <th scope="col">payment_status</th>
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist4.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         
+                                         <td><%=foundlist4[i].id %></td>
+                                         <td><%=foundlist4[i].fullname %></td>
+                                         <td><%=foundlist4[i].contact %></td>
+                                         <td><%=foundlist4[i].address %></td>
+                                         <td><%=foundlist4[i].quantity %></td>
+                                        <td><%=foundlist4[i].mode %></td>
+                                        <td><%=foundlist4[i].city %></td>
+                                        <td><%=foundlist4[i].rest_Name %></td>
+                                         <td><%=foundlist4[i].cost %></td>
+                                        <td><%=foundlist4[i].item_Name %></td>
+                                        <td><%=foundlist4[i].email %></td>
+                                        <td><%=foundlist4[i].totalpayment %></td>
+                                         <td><%=foundlist4[i].OrderDate %></td>
+                                        <td><%=foundlist4[i].Ordertime %></td>
+                                        <td><%=foundlist4[i].payment_id %></td>
+                                        <td><%=foundlist4[i].payment_status %></td>
+                                      </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                </div>
+               </div>
+
+          <!-- show booked items ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+          <!--show supplier list starts sssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+             <div id='showsupplierlist'>
+                    <div class="table-responsive">   
+                  <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                     <div  class="row">
+                       <div class="col-lg-4" style="background-color: green;">
+                        <h5 style="color:white;margin-left: 20px;margin-top: 20px;">List OF Supplier</h5>
+                       </div>
+                      <div class="col-lg-8">
+                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                     </div>
+                      </div>
+                           
+                      <thead style="background-color: lightgreen;" >
+                                 <tr>
+                                  <th scope="col">id</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Address</th>
+                                  <th scope="col">Password</th>
+                                  <th scope="col">city</th>
+                                  
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist2.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         <td><%=foundlist2[i].id %></td>
+                                         <td><%=foundlist2[i].fullname %></td>
+                                         <td><%=foundlist2[i].contact %></td>
+                                         <td><%=foundlist2[i].email %></td>
+                                         <td><%=foundlist2[i].fulladdress %></td>
+                                        <td><%=foundlist2[i].password %></td>
+                                        <td><%=foundlist2[i].city %></td>
+                                       </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                </div>
+             </div>
+             
+          <!--show supplier list ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+
+          <!--show user list stats sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+               <div id='showuserlist'>
+                     <div class="table-responsive">   
+                  <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                     <div  class="row">
+                       <div class="col-lg-4" style="background-color: green;">
+                        <h5 style="color:white;margin-left: 20px;margin-top: 20px;">List OF User</h5>
+                       </div>
+                      <div class="col-lg-8">
+                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                     </div>
+                      </div>
+                           
+                      <thead style="background-color: lightgreen;" >
+                                 <tr>
+                                  <th scope="col">id</th>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Contact</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Address</th>
+                                  <th scope="col">Password</th>
+                                   <th scope="col">City</th>
+                                  <th scope="col">Rand</th>
+                                  
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist1.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         <td><%=foundlist1[i].id %></td>
+                                         <td><%=foundlist1[i].fullname %></td>
+                                         <td><%=foundlist1[i].contact %></td>
+                                         <td><%=foundlist1[i].email %></td>
+                                         <td><%=foundlist1[i].address %></td>
+                                        <td><%=foundlist1[i].password %></td>
+                                        <td><%=foundlist1[i].city %></td>
+                                        <td><%=foundlist1[i].rand %></td>
+                                       </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                </div>
+               </div>
+          <!--show user list ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+          <!--show deleted user starts ssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+                <div id='deleteduserlist'>
+                   <div class="table-responsive">   
+                  <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                     <div  class="row">
+                       <div class="col-lg-4" style="background-color: green;">
+                        <h5 style="color:white;margin-left: 20px;margin-top: 20px;">Deleted User</h5>
+                       </div>
+                      <div class="col-lg-8">
+                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                     </div>
+                      </div>
+                           
+                      <thead style="background-color: lightgreen;" >
+                                 <tr>
+                                  <th scope="col">User_name</th>
+                                  <th scope="col">User_contact</th>
+                                  <th scope="col">User_password</th>
+                                  <th scope="col">User_email</th>
+                                  <th scope="col">User_city</th>
+                                  <th scope="col">User_fulladdress</th>
+                                  <th scope="col">Admin location</th>
+                                  <th scope="col">Deleted_Date</th>
+                                  
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist6.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         <td><%=foundlist6[i].username %></td>
+                                         <td><%=foundlist6[i].usercontact %></td>
+                                         <td><%=foundlist6[i].userpassword %></td>
+                                         <td><%=foundlist6[i].useremail %></td>
+                                         <td><%=foundlist6[i].usercity %></td>
+                                        <td><%=foundlist6[i].userfulladdress %></td>
+                                         <td><%=foundlist6[i].adminlocation %></td>
+                                        <td><%=foundlist6[i].deletedDate %></td>
+                                       </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                </div>
+                </div>
+          <!--show deleted user ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+          <!--show deleted supplier lists starts ssssssssssssssssssssssssssssssssssssssssss-->
+                
+              <div id='deletedsupplierlist'>
+                      <div class="table-responsive">   
+                  <table id="dtHorizontalVerticalExample" class="table_wrapper  table-hover table">
+                     <div  class="row">
+                       <div class="col-lg-4" style="background-color: green;">
+                        <h5 style="color:white;margin-left: 20px;margin-top: 20px;">Deleted Supplier</h5>
+                       </div>
+                      <div class="col-lg-8">
+                         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                     </div>
+                      </div>
+                           
+                      <thead style="background-color: lightgreen;" >
+                                 <tr>
+                                  <th scope="col">Supplier_name</th>
+                                  <th scope="col">Supplier_contact</th>
+                                  <th scope="col">Supplier_password</th>
+                                  <th scope="col">Supplier_email</th>
+                                  <th scope="col">Supplier_city</th>
+                                  <th scope="col">Supplier_fulladdress</th>
+                                  <th scope="col">Deleted_Date</th>
+                                  
+                               </tr>
+                     </thead>
+                           <% for(var i=0;i<foundlist5.length;i++){ %>
+                                   <tbody id="myTable">
+                                       <tr>
+                                         <td><%=foundlist5[i].suppliername %></td>
+                                         <td><%=foundlist5[i].suppliercontact %></td>
+                                         <td><%=foundlist5[i].supplierpassword %></td>
+                                         <td><%=foundlist5[i].supplieremail %></td>
+                                         <td><%=foundlist5[i].suppliercity %></td>
+                                        <td><%=foundlist5[i].supplierfulladdress %></td>
+                                        <td><%=foundlist5[i].deletedDate %></td>
+                                       </tr>
+    
+   
+                            <%} %>
+                                 </tbody>
+                  </table>
+                </div>
+
+              </div>
+          <!--show deleted supplier lists ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+        </div>
+    </div>
+ </div>
+</section>
+
+
+
+<script>
+  document.getElementById("addadmin").style.display='none';
+  document.getElementById("removeadmin").style.display='none';
+  document.getElementById("showadmin").style.display='none';
+  document.getElementById("showuserlist").style.display='none';
+  document.getElementById("showbookeditem").style.display='none';
+  document.getElementById("showsupplierlist").style.display='none';
+  document.getElementById("deletedsupplierlist").style.display='none';
+  document.getElementById("deleteduserlist").style.display='none';
+  function addAdmin()
+  {
+    document.getElementById("addadmin").style.display='block';
+  document.getElementById("removeadmin").style.display='none';
+  document.getElementById("showadmin").style.display='none';
+  document.getElementById("showuserlist").style.display='none';
+  document.getElementById("showbookeditem").style.display='none';
+  document.getElementById("showsupplierlist").style.display='none';
+  document.getElementById("deletedsupplierlist").style.display='none';
+  document.getElementById("deleteduserlist").style.display='none';
+  }
+
+  function deleteAdmin()
+  {
+     document.getElementById("addadmin").style.display='none';
+  document.getElementById("removeadmin").style.display='block';
+  document.getElementById("showadmin").style.display='none';
+  document.getElementById("showuserlist").style.display='none';
+  document.getElementById("showbookeditem").style.display='none';
+  document.getElementById("showsupplierlist").style.display='none';
+  document.getElementById("deletedsupplierlist").style.display='none';
+  document.getElementById("deleteduserlist").style.display='none';
+  }
+
+  function bookedItems()
+  {
+    document.getElementById("addadmin").style.display='none';
+  document.getElementById("removeadmin").style.display='none';
+  document.getElementById("showadmin").style.display='none';
+  document.getElementById("showuserlist").style.display='none';
+  document.getElementById("showbookeditem").style.display='block';
+  document.getElementById("showsupplierlist").style.display='none';
+  document.getElementById("deletedsupplierlist").style.display='none';
+  document.getElementById("deleteduserlist").style.display='none';
+  }
+
+  function showSuppliers()
+  {
+     document.getElementById("addadmin").style.display='none';
+  document.getElementById("removeadmin").style.display='none';
+  document.getElementById("showadmin").style.display='none';
+  document.getElementById("showuserlist").style.display='none';
+  document.getElementById("showbookeditem").style.display='none';
+  document.getElementById("showsupplierlist").style.display='block';
+  document.getElementById("deletedsupplierlist").style.display='none';
+  document.getElementById("deleteduserlist").style.display='none';
+  }
+
+  function showUsers()
+  {
+     document.getElementById("addadmin").style.display='none';
+  document.getElementById("removeadmin").style.display='none';
+  document.getElementById("showadmin").style.display='none';
+  document.getElementById("showuserlist").style.display='block';
+  document.getElementById("showbookeditem").style.display='none';
+  document.getElementById("showsupplierlist").style.display='none';
+  document.getElementById("deletedsupplierlist").style.display='none';
+  document.getElementById("deleteduserlist").style.display='none';
+  }
+
+
+  function showAdmin()
+  {
+     document.getElementById("addadmin").style.display='none';
+     document.getElementById("removeadmin").style.display='none';
+     document.getElementById("showadmin").style.display='none';
+     document.getElementById("showuserlist").style.display='none';
+     document.getElementById("showbookeditem").style.display='none';
+     document.getElementById("showadmin").style.display='block';
+     document.getElementById("deletedsupplierlist").style.display='none';
+     document.getElementById("deleteduserlist").style.display='none';
+     document.getElementById("showsupplierlist").style.display='none';
+  }
+
+  function showdeletedSupplier()
+  {
+     document.getElementById("addadmin").style.display='none';
+     document.getElementById("removeadmin").style.display='none';
+     document.getElementById("showadmin").style.display='none';
+     document.getElementById("showuserlist").style.display='none';
+     document.getElementById("showbookeditem").style.display='none';
+     document.getElementById("showadmin").style.display='none';
+     document.getElementById("deletedsupplierlist").style.display='block';
+     document.getElementById("deleteduserlist").style.display='none';
+  }
+  
+  function showdeletedUser()
+  {
+      document.getElementById("addadmin").style.display='none';
+     document.getElementById("removeadmin").style.display='none';
+     document.getElementById("showadmin").style.display='none';
+     document.getElementById("showuserlist").style.display='none';
+     document.getElementById("showbookeditem").style.display='none';
+     document.getElementById("showadmin").style.display='none';
+     document.getElementById("deletedsupplierlist").style.display='none';
+     document.getElementById("deleteduserlist").style.display='block';
+  }
+
+  function registerAdmin()
+  {
+    fullname1=$("#fullname1").val();
+    email1=$("#email1").val();
+    select_menu=$("#select_menu").val();
+    address1=$("#address1").val();
+    contact1=$("#contact1").val();
+    password1=$("#password1").val();
+
+    if(contact1.length<10 || contact1.length>10)
+    {
+      alert('wrong phone no .It should contain 10 digits');
+      return false;
+    }
+
+    $.post('/addAdmin',{fullname1:fullname1,email1:email1,select_menu:select_menu,address1:address1,contact1:contact1,password1:password1},function(data){
+        if(data==='success')
+        {
+          window.location.href='/success';
+        }
+        else if(data==='error')
+        {
+          alert('some error has been occured ');
+          return false;
+        }
+        else if(data==='found')
+        {
+          alert('this email already exists');
+        }
+        else if(data==='errorinsent')
+        {
+          alert('some error  occurs while sending email RETRY IT');
+        }
+    })
+
+  }
+
+
+  function removeAdmin()
+  {
+     id3=$("#id3").val();
+     $.post('/deleteAdminbyId',{id3:id3},function(data)
+     {
+         if(data==='sorry')
+         {
+          alert('invalid id');
+          return  false;
+         }
+
+         else if(data==='done')
+         {
+           window.location.href='/success';
+         }
+     })
+  }
+</script>
+</body>
+</html>

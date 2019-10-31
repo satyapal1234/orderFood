@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ORDER_FOOD</title>
+	<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+
+
+<body>
+
+    <section style='background-color: rgb(204, 255, 102);background-image: -webkit-linear-gradient(left top, 
+        transparent 0%, transparent 25%, 
+        rgba(0,0,0,.15) 25%, rgba(0,0,0,.15) 50%, 
+        transparent 50%, transparent 75%, 
+        rgba(0,0,0,.15) 75%);'>
+        <div class="container">
+            <div>
+                <center>
+                    <img src="logo.webp" style='width:100px;height: 100px;border-radius: 50%'>
+                    <h3 class='gurantee-header' style='color:rgb(0, 51, 0);' >VIVEKO ORDERING FOOD </h3><hr>
+                </center>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div >
+            <div class='row'>
+                
+
+                <div class='col-lg-8'>
+                    <div class='submission-head'><h5>Final Submission</h5></div>
+                    <form class='form-signin' action='/finalsubmission' method='post'>
+                        <div class="input-container">
+                           <i class="fa fa-user icon"></i>
+                           <input id="fullname3" type="text" name="fullname3" style="width:80%;outline:none;" class="input-field" placeholder="Your Fullname" required autofocus>
+                            </br>
+                        </div></br>
+
+                        <div class="input-container">
+                           <i class="fa fa-phone icon"></i>
+                           <input id="contact3" type="number" name="contact3" style="width:80%;outline:none;" class="input-field" placeholder="Your Contact" required autofocus>
+                            </br>
+                        </div></br>
+
+                        <div class="input-container">
+                           <i class="fa fa-address-book icon"></i>
+                           <input id="address3" type="text" name="address3" style="width:80%;outline:none;" class="input-field" placeholder="Your Address" required autofocus>
+                            </br>
+                        </div> </br>
+                          <input type='hidden' name='city' value='<%= result[0] %>'>
+                          <input type='hidden' name='rest_name' value='<%= result[1] %>'>
+                          <input type='hidden' name='cost' value='<%= result[2] %>'>
+                          <input type='hidden' name='item_name' value='<%= result[3] %>'>
+                          <input type='hidden' name='email3' value='<%= email %>'>
+                        <div class="input-container">
+                           <i class="fa fa-phone icon"></i>
+                           <input id="items3" type="number" name="items3" style="width:80%;outline:none;" class="input-field" placeholder="Enter quantity" required autofocus>
+                            </br>
+                        </div></br>
+
+                        <div style='margin-left:40px;'>
+                           Select the mode of payment</br>
+                                  cash_on_delivery<input type="radio" name="radio" id="radio" value="cash_on_delivery" required autofocus > 
+                                  Online_payment<input type="radio" name="radio" id="radio" value="Online_payment" required autofocus >
+                        </div></br>
+                        
+                        <div class='input-container'>
+                        <button style="background-color:green;" class="btn btn-lg btn-primary " type="submit" name="button" value="booking"  id="submit7">Book Now</button></div>
+                       
+                        
+                         
+                    </form>
+                </div>
+
+                <div class='col-lg-4' style='background-color: lightgreen;'>
+                    <img src='order2.gif' class='img-fluid'>
+                    <div style='text-align:center;color:rgb(0, 51, 0);font-family: coiny'>Hurry Up Now</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

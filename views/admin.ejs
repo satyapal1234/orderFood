@@ -1,0 +1,276 @@
+<%-include('header')-%>
+
+<style>
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 170x;
+  left: 0;
+  background-color:rgb(31,31,20);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+
+<section>
+  <div class='row'>
+   
+
+<div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <div class='search-category'>SEARCH BY LOCATION</div><hr>
+      <div class='admin-wrap'>
+          <div class='admin-wrap-loc col' >
+            <a href="#" style='color:white' onclick="showVanarasiAdmin()">Varanasi </a>
+          </div>
+          <div class='admin-wrap-loc col'>
+            <a href="#" style='color:white' onclick="showRanchiAdmin()">Ranchi</a>
+          </div>
+          <div class='admin-wrap-loc col'>
+            <a href="#" style='color:white' onclick="showPatnaAdmin()">Patna</a>
+          </div>
+          <div class='admin-wrap-loc col'>
+            <a href="#" style='color:white' onclick="showJamshedpurAdmin()">Jamshedpur</a>
+          </div>
+         
+           <div class='admin-wrap-loc'>
+            <a href="#" style='color:white' onclick="showJamshedpurAdmin()">Jamshedpur</a>
+          </div>
+
+          <div class='admin-wrap-loc'>
+            <a href="#" style='color:white' onclick="showJamshedpurAdmin()">Jamshedpur</a>
+          </div>
+
+
+          <div class='admin-wrap-loc'>
+            <a href="#" style='color:white' onclick="showJamshedpurAdmin()">Jamshedpur</a>
+          </div>
+
+
+          <div class='admin-wrap-loc'>
+            <a href="#" style='color:white' onclick="showJamshedpurAdmin()">Jamshedpur</a>
+          </div>
+
+
+          <div class='admin-wrap-loc'>
+            <a href="#" style='color:white' onclick="showJamshedpurAdmin()">Jamshedpur</a>
+          </div>
+         
+     </div>
+    </div>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+   <center> 
+        <div class='col-lg-12' >
+            <div id='admin' style='text-align: center;' >           
+                <center><img  src='admin1.jpg' class='img-fluid' id='admin1'></center>
+             </div>
+          </div>
+    <center>
+
+
+
+  <div class='row'> 
+      <div class='col-lg-6'>  
+              
+                <div id='varanasi' style='text-align: center;'>
+                <img id="ig22" src='admin2.jpg' class='img-fluid'></br></br>
+                 <button class='btn btn-outline-danger' id='log' name='button' value='varanasi' onclick="showloginform()">Login_Form</button>
+                 
+          </div>
+
+          <div id='ranchi' style='text-align: center;'>
+            <img id="ig22" src='admin3.jpg' class='img-fluid'></br></br>
+
+            <button class='btn btn-outline-danger' id='log' name='button' value='ranchi' onclick="showloginform()">Login_Form</button>
+          </div>
+
+          <div id='jamshedpur' style='text-align: center;'>
+            <img id="ig22" src='admin2.jpg' class='img-fluid'></br></br>
+
+            <button class='btn btn-outline-danger' id='log' name='button' value='jamshedpur'  onclick="showloginform()">Login_Form</button>
+          </div>
+
+         <div id='patna' style='text-align: center;'>
+            <img id="ig22" src='admin5.jpg' class='img-fluid'></br></br>
+
+             <button class='btn btn-outline-danger' id='log' name='button' value='patna' onclick="showloginform()">Login_Form</button>
+         </div>
+      </div> 
+      
+      <div class='col-lg-6'>
+          <div class='login-admin-form' id='admin-login-form'>
+             <form class='form-signin'>
+                 <div class="input-container2">
+                     <i class="fa fa-envelope icon"></i>
+                       <input id="email" type="email" name="email" style="width:80%;outline:none;" class="input-field2" placeholder="Enter Email" required autofocus>
+                        </br>
+                 </div></br>
+
+                 <div class="input-container2">
+                     <select class='form-control' id="select_menu" name="select_menu" required autofocus style="width: 95%;" >
+                          <option value="varanasi">Varanasi</option>
+                          <option value="patna">Patna</option>
+                          <option value="ranchi">Ranchi</option>
+                          <option value="jamshedpur">Jamshedpur</option>
+                        </select></br>
+                 </div></br>
+
+                 <div class="input-container2">
+                     <i class="fa fa-key icon"></i>
+                       <input id="password" type="password" name="password" style="width:80%;outline:none;" class="input-field2" placeholder="Enter password" required autofocus>
+                        </br>
+                 </div></br>
+
+                 <div style='text-align:center;'>
+                    <button style="background-color:green;" class="btn btn-primary " type="submit" name="button" value="login-admin"  id="submit2" onclick='login()'>Login</button>
+                 </div>
+                        
+             </form>
+          </div>
+      </div> 
+  </div>
+  </div>  
+  </div>
+</section>
+
+
+
+
+<script>
+    document.getElementById("varanasi").style.display='none';
+    document.getElementById("ranchi").style.display='none';
+    document.getElementById("patna").style.display='none';
+    document.getElementById("jamshedpur").style.display='none';
+    document.getElementById("admin-login-form").style.display='none';
+
+    function showloginform()
+    {
+       document.getElementById("admin-login-form").style.display='block';
+    }
+
+    function showVanarasiAdmin()
+    {
+      document.getElementById("varanasi").style.display='block';
+      document.getElementById("ranchi").style.display='none';
+    document.getElementById("patna").style.display='none';
+    document.getElementById("jamshedpur").style.display='none';
+    document.getElementById('admin1').style.height='100px';
+    document.getElementById("admin-login-form").style.display='none';
+
+    }
+   
+   function showRanchiAdmin()
+   {
+      document.getElementById("varanasi").style.display='none';
+    document.getElementById("ranchi").style.display='block';
+    document.getElementById("patna").style.display='none';
+    document.getElementById("jamshedpur").style.display='none';
+    document.getElementById('admin1').style.height='100px';
+    document.getElementById("admin-login-form").style.display='none';
+   }
+
+
+   function showPatnaAdmin()
+   {
+     document.getElementById("varanasi").style.display='none';
+    document.getElementById("ranchi").style.display='none';
+    document.getElementById("patna").style.display='block';
+    document.getElementById("jamshedpur").style.display='none';
+    document.getElementById('admin1').style.height='100px';
+    document.getElementById("admin-login-form").style.display='none';
+   }
+
+   function showJamshedpurAdmin()
+   {
+    document.getElementById("varanasi").style.display='none';
+    document.getElementById("ranchi").style.display='none';
+    document.getElementById("patna").style.display='none';
+    document.getElementById("jamshedpur").style.display='block';
+    document.getElementById('admin1').style.height='100px';
+    document.getElementById("admin-login-form").style.display='none';
+   }
+
+
+
+    function login()
+    {
+       email=$("#email").val();
+       select_menu=$("#select_menu").val();
+       password=$("#password").val();
+       
+       $.post('/adminlogin',{email:email,select_menu:select_menu,password:password},function(data){
+           if(data==='sorry')
+           {
+            alert('sorry there is no such user with this data');
+           }
+           else if(data==='success1')
+           {
+             window.location.href='/Ranchiadminwork';
+           }
+
+           else if(data==='success2')
+           {
+            window.location.href='/Varanasiadminwork'
+           }
+
+           else if(data==='success3')
+           {
+            window.location.href='/Jamshedpuradminwork';
+           }
+
+           else if(data==='success4')
+           {
+            window.location.href='/Patnaadminwork';
+           }
+       })
+
+    }
+
+$( document ).ready(function() {
+    document.getElementById("mySidenav").style.width = "200px";
+});
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "300px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>

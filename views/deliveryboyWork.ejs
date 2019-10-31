@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ORDER_FOOD</title>
+	<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<section style='background-color:red; '>
+   <center>
+    <img src='logo.webp' class='logo'>
+  </center>
+ <center>
+   <div class="superadmin-head">delivery man pannels</div>
+</center>
+
+
+<div >
+  <nav class="navbar navbar-expand-lg navbar-light" style='background-color:red;padding: 0.3% 5%'>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+  <div style='margin:0 auto'>
+    <ul class="navbar-nav mr-auto" style='font-family: coiny;'>
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='seeYourItem()'>See Your Item</a>
+      </li>
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='processItem()'>Process Your Item</a>
+      </li>
+      <li class="nav-item one">
+        <a class="nav-link" href="#" style='color:white;' onclick='itemorder()'>Your orders</a>
+      </li>
+
+    </ul>
+             
+   </div>
+     <% if(ses.length==6){%>
+    <span class="navbar-text">
+     <div class="dropdown dropleft">
+        
+          <i class="fa fa-user  "  data-toggle="dropdown" style='font-size:48px;color:white;border:1px solid white;border-radius: 50%;padding:9px 9px;'></i>
+         
+         
+       <div class="dropdown-menu" style='text-align: center'>
+          <a class="dropdown-item" href="#"><%=yourname%></a>
+          <a class="dropdown-item" href="#">Order_History</a>
+          <a class="dropdown-item" href="#">Preferences</a>
+          <a class="dropdown-item" href="/logout">Logout</a>
+      </div>
+    </div>
+    </span>
+
+    <%} else {%>
+
+    <%}%>
+  </div>
+</nav>
+</div>
+  
+</section>
+
+
+<section>
+   <div class='row'>
+     <div class='col-lg-3' style='margin-top: 30px;'>
+         <center>
+          <img src='guest1.jpg' class='img-thumbnail' style='border-radius: 50%;height: 150px;width: 150px;'>
+            <div class='superadmin-work-welcome'><blink>Welcome Mr <%=yourname%></blink></div>
+        </center>
+     </div>
+
+     <div class='col-lg-9'>
+     <!--see item starts ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss--> 
+      
+        <!--see item ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+
+        <!--process item starts ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+        <div id='processitem'>
+           <div class='item-head'>Process Your Item Taken</div>
+             <form class='form-signin' action='/deliveryboyProcessitem' method="post">
+                  <label style='font-style:italic;margin-left: 40px;'>Enter check in time</label>
+                  <div class="input-container">
+                     <i class="fa fa-envelope icon"></i>
+                     <input id="checkintime" type="time" name="checkintime" style="width:80%;outline:none;" class="input-field" placeholder="Enter checkintime" required autofocus>
+                    </br>
+                  </div></br>
+
+                  <div class="input-container">
+                     <i class="fa fa-envelope icon"></i>
+                     <input id="id8" type="text" name="id8" style="width:80%;outline:none;" class="input-field" placeholder="Enter the id of item taken" required autofocus>
+                    </br>
+                  </div></br>
+
+                  <div class="input-container">
+                     <i class="fa fa-envelope icon"></i>
+                     <input id="hotelbillid" type="text" name="hotelbillid" style="width:80%;outline:none;" class="input-field" placeholder="Enter the bill id of hotel" required autofocus>
+                    </br>
+                  </div></br>
+
+
+                    <input type="hidden" name="location" value="<%=location%>">
+                    <input type="hidden" name="supplierid" value="<%=foundlist.id %>">
+                  <div class="input-container">
+                     <i class="fa fa-envelope icon"></i>
+                     <input id="rest_name" type="text" name="rest_name" style="width:80%;outline:none;" class="input-field" placeholder="Enter resturant name" required autofocus>
+                    </br>
+                  </div></br>
+
+
+                  <label style='font-style:italic;margin-left: 40px;'>Enter check out time</label>
+                  <div class="input-container">
+                     <i class="fa fa-envelope icon"></i>
+
+                     <input id="checkouttime" type="time" name="checkouttime" style="width:80%;outline:none;" class="input-field" placeholder="Enter checkintime" required autofocus>
+                    </br>
+                  </div></br>
+
+                  <div style='margin-left: 50px;'>
+                     <center><button style="background-color:green;" class="btn  btn-primary " type="submit" name="button" value="see"  id="submit17" >Set On Delivering</button></center>
+                  </div>
+             </form>
+        </div>
+
+        <!--process item ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+
+        <!--setting item status starts sssssssssssssssssssssssssssssssssssssssssssssssss-->
+              <div id='settingitemstatus' style="margin-top:30px;">
+                <div style='font-family: Courier New;font-weight: bold;text-align: center;color:green;font-size: 20px;'>Set the Item Status</div>
+                 <form class='formsignin' action='/setitemstatus' method="post">
+                    <div class="input-container">
+                       <i class="fa fa-envelope icon"></i>
+                       <input id="id12" type="text" name="id12" style="width:80%;outline:none;" class="input-field" placeholder="Enter the id of item choosen" required autofocus>
+                       </br>
+                    </div></br>
+
+                    <div class="input-container">
+                       <select class='form-control' id="select_menustatus" name="select_menustatus" required autofocus style="width: 85%;" >
+                          <option value="processing">processing</option>
+                          <option value="on the way">on the way</option>
+                          <option value="delivered">delivered</option>
+                         
+                        </select></br>
+                    </div></br>
+                     
+                      <input  id='location' type="hidden" name="location" value="<%=location%>">
+                      <input  id='deliverycontact' type="hidden" name="deliverycontact" value="<%=foundlist.contact%>">
+                    <div style='margin-left: 50px;'>
+                      <center><button style="background-color:green;" class="btn  btn-lg-primary " type="submit" name="button" value="set"  id="submit18" onclick='setitemstatus()'>Set</button></center>
+                   </div>
+                 </form>
+              </div>
+
+        <!--setting item status ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+      <!--order item starts sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
+        <div id='order_items' style='margin-top:30px;'>
+          <div style='text-align: center;font-family: Courier New;color:red;font-size: 25px;font-weight: bold;'>Your Orders Are</div><hr width='50%' >
+            <% for(var i=0;i<foundlist2.length;i++) { %>
+                <%for(var j=0;j<foundlist2[i].processingitems.length;j++) { %>
+                  
+                   <div style='text-align:center;'>
+                    
+                     <center>
+                      <form class='form-signin' action='/deliveryboySeeItem' method="post">
+                       <div style='text-align: center;'>
+                       <div class='row' style='margin-left:20%;'> 
+                         <div class='col-lg-4'><%=foundlist2[i].processingitems[j] %></div>
+                           <div class='col-lg-4'><button style="background-color:green;padding: 10px 20px;" class="btn  btn-primary " type="submit" name="button" value="<%=foundlist2[i].processingitems[j] %>"  id="submit16">
+                           See Item</button></div>
+                       </div>
+                        
+                      </div>
+                     </form> 
+                   </center>
+                  </div>
+                     </br>
+                <% } %>
+            <% } %>
+        </div>
+
+        <!--order item ends hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+     </div>
+   </div>
+</section>
+
+
+<script>
+  // document.getElementById("seeitem").style.display='none';
+   document.getElementById("processitem").style.display='none';
+   //document.getElementById("settingitemstatus").style.display='none';
+    document.getElementById("order_items").style.display='none';
+ 
+
+   function processItem()
+   {
+    // document.getElementById("seeitem").style.display='none';
+   document.getElementById("processitem").style.display='block';
+   document.getElementById("settingitemstatus").style.display='none';
+    document.getElementById("order_items").style.display='none';
+   }
+
+   function itemorder()
+   {
+     //document.getElementById("seeitem").style.display='none';
+   document.getElementById("processitem").style.display='none';
+   document.getElementById("settingitemstatus").style.display='none';
+    document.getElementById("order_items").style.display='block';
+   }
+
+</script>
+</body>
+</html>

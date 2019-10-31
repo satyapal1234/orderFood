@@ -1,0 +1,546 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to { 
+    transform: rotate(360deg);
+  }
+}
+
+#rotate{
+    animation-name:            rotate; 
+    animation-duration:        4s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+#menu
+{
+ display: inline-block;
+  
+  margin-top: 24px;
+  position: relative;
+ 
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: 500ms all;
+}
+
+.head
+{
+	text-transform: uppercase;
+  font-family: 'Squada One', cursive;
+  font-weight: 800;
+  display: block;
+  background: #FFF;
+   padding: 3% 5%;
+ 
+  color: #333;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  text-shadow: 
+        1px 1px 0px #FFF, 
+        2px 2px 0px #999,
+        3px 3px 0px #FFF;
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(10,10,10,.05) 100%);
+    -webkit-transition: 1s all;
+    background-image: -webkit-linear-gradient(left top, 
+        transparent 0%, transparent 25%, 
+        rgba(0,0,0,.15) 25%, rgba(0,0,0,.15) 50%, 
+        transparent 50%, transparent 75%, 
+        rgba(0,0,0,.15) 75%);
+  background-size: 4px 4px;
+    box-shadow: 
+        0 0 0 1px rgba(0,0,0,.4) inset, 
+        0 0 20px -5px rgba(0,0,0,.4),
+        0 0 0px 3px #FFF inset;
+}
+
+
+
+
+.logo
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.nav-link:hover
+{
+  background-color: red;
+}
+.input-container {
+  /* IE10 */
+  display: flex;
+  
+ margin-left: 50px;
+
+}
+
+.icon {
+  padding: 10px;
+  background: lightblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+ 
+  padding: 10px;
+
+}
+
+
+
+.login
+{
+	text-align: center;
+	margin-top:40px;
+}
+
+.login_head
+{
+	font-family:Courier New;
+}
+
+
+#submit ,#submit2,#submit3,#submit4,#submit5,#verify,#log
+{
+	border-radius: 40px;
+	padding:10px 40px;
+}
+
+
+
+.register
+{
+	text-align:center;
+	margin-top:40px;
+}
+
+.register_head
+{
+	font-family:Courier New;
+}
+
+
+#abcd
+{
+  background-image: url("poster1.jpg");
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+
+.categories
+{
+	text-align: center;
+	color:rgb(102, 102, 51);
+	font-family:Courier New;
+	font-weight: bold;
+	font-size:30px;
+	padding:4% 0%;
+}
+
+.wrapper
+{
+	text-align: center;
+}
+
+#ig1
+{
+	width: 70%;
+	height: 90%;
+}
+
+#ig1:hover
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.border
+{
+	 display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 6px;
+    padding: 5% 7%;
+    font-family: coiny;
+    color:red;
+}
+
+.border:hover
+{
+	background-color: rgb(204, 255, 255);
+}
+
+.tracking
+{
+	padding: 3% 5%;
+}
+
+.gurantee
+{
+	padding:4% 0%;
+}
+
+.gurantee-header
+{
+  text-align: center;
+  color:rgb(102, 102, 51);
+  font-family:Courier New;
+  font-weight: bold;
+  font-size:30px;
+  padding:1% 0%;
+}
+
+
+.first-verify-head
+{
+  font-family:Courier New;
+  font-weight: bold;
+  text-align: center;
+  color:blue;
+  font-size: 24px;
+}
+
+.first-verify-wrap
+{
+  text-align: center;
+  
+  padding:5% 5%;
+}
+
+.jamshedpur-head
+{
+  margin-top: 40px;
+}
+
+
+.jamshedpur-head-row
+{
+  margin-top:30px;
+  text-align: center;
+
+}
+
+.rest_name
+{
+  font-family:Courier New;
+  text-align: center;
+
+}
+
+
+.jamshedpur-head2
+{
+  text-align:center;
+  color:red;
+  font-family: coiny;
+  font-style:italic;
+}
+#price
+{
+  font-family:Courier New;
+  color:red;
+}
+.search_by_category
+{
+  text-align: center;
+  font-family: Courier New;
+  margin-top: 40px;
+
+}
+
+.submission-head
+{
+  text-align: center;
+  font-family: arial black;
+  color:green;
+  font-weight: bold;
+}
+
+.search-category
+{
+  color:white;
+  font-family: Courier New;
+  font-weight: bold;
+  padding:7% 12%;
+}
+
+.admin-wrap
+{
+   color:white;
+  font-family:georgia;
+   font-weight: bold;
+  text-align: center;
+}
+
+.admin-wrap-loc
+{
+  padding:10px 30px;
+}
+
+.admin
+{
+  text-align: center;
+}
+
+#ig22
+{
+  border-radius: 50%;
+}
+
+.input-container2 {
+  /* IE10 */
+  display: flex;
+  
+ margin-left: 50px;
+
+}
+
+
+
+.input-field {
+ 
+  padding: 10px;
+
+}
+.login-admin-form
+{
+  margin-top:30px;
+}
+
+.superadmin-head
+{
+  font-family:Courier New;
+  font-weight: bold;
+  font-style:italic;
+  font-size: 40px;
+  color:white;
+}
+
+.one
+{
+  padding: 10px 20px;
+}
+.superadmin-work-welcome
+{
+  font-family: cursive;
+  font-weight: bold;
+  color:red;
+}
+
+ 
+.add-admin-head
+{
+  font-family: Courier New;
+  color:red;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top:30px;
+  text-align: center;
+
+}
+
+.remove-admin-head
+{
+  font-family: Courier New;
+  color:red;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top:30px;
+  text-align: center;
+  
+}
+
+.remove-user-head
+{
+   font-family: Courier New;
+  color:blue;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top:30px;
+  text-align: center;
+}
+
+.add-suplliers-head
+{
+  font-family: Courier New;
+  color:blue;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top:30px;
+  text-align: center;
+}
+
+
+#imgattach
+{
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-image: url('b1.jpg');
+   background-size: cover;
+   opacity: 0.5;
+}
+
+
+
+
+.deliver-wrap
+{
+   color:white;
+  font-family:Courier New;
+ 
+  text-align: center;
+}
+
+.deliver-wrap-loc
+{
+  padding:10px 30px;
+  font-family: coiny;
+}
+
+.deliver-category
+{
+  color:white;
+  font-family: coiny;
+  padding:5% 20%;
+}
+
+.wrap-deliver
+{
+  text-align: center;
+  margin-top:30px;
+}
+.item-head
+{
+  font-family: Courier New;
+  color:red;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top:30px;
+  text-align: center;
+}
+
+
+.feature1
+{
+ text-align: center;
+  color:green;
+  font-family:Courier New;
+  font-weight: bold;
+  font-size:30px;
+  padding:4% 0%;
+  
+}
+
+
+.feature2
+{
+   text-align: center;
+  color:green;
+  font-family:Courier New;
+  font-weight: bold;
+  font-size:30px;
+  padding:4% 0%;
+  
+  word-spacing: 5px;
+}
+
+.feature3
+{
+ text-align: center;
+  color:green;
+  font-family:Courier New;
+  font-weight: bold;
+  font-size:30px;
+  padding:4% 0%;
+  
+  word-spacing: 5px;
+}
+
+.head-data
+{
+  font-family: Courier New;
+ color:rgb(0, 51, 0);
+ font-weight: bold;
+}
+
+.data
+{
+  font-size:30px;
+  color:red;
+}
+
+
+
+
+
+
+
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  background-color: rgb(51, 51, 255);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+   
+

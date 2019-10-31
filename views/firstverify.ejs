@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ORDER_FOOD</title>
+  <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Googlefont-->
+   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+     <!--font-awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+      .nav-link
+      {
+        margin:10px;
+        font-weight: bold;
+      }
+
+      body
+      {
+        background-color: rgb(102, 102, 255)
+      }
+    </style>
+</head>
+<body>
+  
+<
+
+
+
+
+
+
+
+
+
+
+<section style='margin-top: 100px;padding: 10px 20px'>
+    
+           <div class='container shadow' style="background-color: white;padding: 10px 20px">
+              <div class='first-verify-head'>First Verify Your Email</div>
+              <div class='first-verify-wrap'>
+              <form class='form-signin'>
+
+                <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input id="email" type="email" name="email" style="width:80%;outline:none;" class="input-field" placeholder="Enter Email" required autofocus>
+                   </br>
+                </div></br></br>
+
+
+                <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input id="password3" type="password" name="password3" style="width:80%;outline:none;" class="input-field" placeholder="Enter One Time Password" required autofocus>
+                   </br>
+                </div></br></br>
+
+                <div>
+                    <button style="background-color:blue" class="btn btn-lg btn-primary " type="submit" name="button" value="verify"  id="verify" onclick="verifyCustomerss()">Verify Now</button>
+                </div>
+
+
+              </form>
+            </div>
+              
+           </div>
+        
+</section>
+
+
+
+
+
+
+
+<script>
+  
+  function verifyCustomerss()
+  {
+    email=$("#email").val();
+    password3=$("#password3").val();
+
+    $.post('/verifyCustomer',{email:email,password3:password3},function(data){
+       if(data==='verified')
+       {
+         window.location.href='/';
+       }
+
+       else if(data==='wrong')
+       {
+        alert('this is the wrong otp you have entered')
+       }
+    })
+  }
+</script>
+</body>
+</html>

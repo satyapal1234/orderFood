@@ -1,0 +1,628 @@
+<%-include('header')-%>
+    
+
+<section style='margin-top: 40px;'>
+     <div class="row">
+        <div class='col-lg-8'>
+            <div class='container' id="menu">
+                <div class='head'><h4>VIVEKO ORDERING FOOD ONLINE </h4> </div>
+                <div class='login' id='login'>
+                    <div class="login_head">Login Customer</div>
+                    <form class='form-signin' >
+                        <div class="input-container">
+                           <i class="fa fa-envelope icon"></i>
+                           <input id="email1" type="email" name="email1" style="width:80%;outline:none;" class="input-field" placeholder="Your Email" required autofocus>
+                            </br>
+
+                        </div>
+                        </br>
+                        <div class="input-container">
+                           <i class="fa fa-key icon"></i>
+                           <input id="password1" type="password" name="password1" style="width:80%;outline:none;" class="input-field" placeholder="Your password" required autofocus>
+                            </br>
+ 
+                        </div>
+                        </br>  
+                        <div>
+                             <button style="background-color:green;" class="btn btn-lg btn-primary " type="submit" name="button" value="login"  id="submit" onclick="login()">Sign_In</button>
+                        </div>
+                        </br> 
+                        <div>If you are a new user <a href="#" onclick="showRegistrationForm()">Create Account</a></div>
+
+                    </form>
+                </div>
+
+
+
+                <div class="register" id="register">
+                    <div class='register_head'>Register Customer</div>
+                    <form>
+                         <div class="input-container">
+                           <i class="fa fa-user icon"></i>
+                           <input id="fullname2" type="text" name="fullname2" style="width:80%;outline:none;" class="input-field" placeholder="Your Fullname" required autofocus>
+                            </br>
+
+                        </div>
+                         </br>
+                        <div class="input-container">
+                           <i class="fa fa-envelope icon"></i>
+                           <input id="email2" type="email" name="email2" style="width:80%;outline:none;" class="input-field" placeholder="Your Email" required autofocus>
+                            </br>
+
+                        </div>
+                         </br>
+                        <div class="input-container">
+                           <i class="fa fa-phone icon"></i>
+                           <input id="contact2" type="number" name="contact2" style="width:80%;outline:none;" class="input-field" placeholder="Your Contact" required autofocus>
+                            </br>
+
+                        </div>
+                        </br>
+                        <div class="input-container">
+                           <i class="fa fa-address-book icon"></i>
+                           <input id="address2" type="text" name="address2" style="width:80%;outline:none;" class="input-field" placeholder="Your Address" required autofocus>
+                            </br>
+
+                        </div>
+                        </br>
+
+                         <div class="input-container">
+                          
+                           <i class="fa fa-key icon"></i>
+                           <input id="password2" type="text" name="password2" style="width:80%;outline:none;" class="input-field" placeholder="set password" required autofocus>
+                            </br>
+
+                        </div>
+                        </br>
+
+                        <div class="input-container">
+                           <i class="fa fa-address-book icon"></i>
+                           <input id="city2" type="text" name="city2" style="width:80%;outline:none;" class="input-field" placeholder="Your City" required autofocus>
+                            </br>
+
+                        </div></br>
+
+                        <div>
+                             <button style="background-color:green;" class="btn btn-lg btn-primary " type="submit" name="button" value="register"  id="submit2" onclick="register()">Sign_Up</button>
+                        </div>
+                         </br>
+                        <div>If you already have account <a href="#" onclick="showLoginForm()">Login Here</a></div>
+
+
+                    </form>
+
+                </div>
+   
+
+            </div>
+        </div>
+
+        <div class='col-lg-4' >
+            <div id="abcd">
+                  
+                  <div class='container'  style=" background: rgba(0,0,0,.5);padding:25% 2%;">
+                    <div style="text-align: center;color:white;font-family: timesRoman">Enter The Location</div>
+                    <center> 
+                      <form class='form-signin' >
+                          <select class='form-control' id="select_menu" name="select_menu" required autofocus style="width: 60%;" >
+                          <option value="varanasi">Varanasi</option>
+                          <option value="patna">Patna</option>
+                          <option value="ranchi">Ranchi</option>
+                          <option value="jamshedpur">Jamshedpur</option>
+                        </select></br>
+                        <input type="submit" class='btn btn-success' id="submit3" name="button" value="search" onclick="search()">
+                     </form>
+                 </center>
+                 </div>
+            </div>
+            
+        </div>
+     </div>
+
+</section>
+
+
+<section style="margin-top: 40px;background-color: lightgray;">
+    <div class='categories'>OUR POPULAR CATEGORIES <hr width="50%" ></div>
+    <div class='wrapper'>
+        <div class="container">
+            <div class="row">
+                <div class='col-lg-3'>
+                    <img id="ig1" src="item1.jpg" class='img-fluid'>
+                </div>
+
+                <div class='col-lg-3'>
+                    <img id="ig1" src="item2.png" class='img-fluid'>
+                </div>
+
+                <div class='col-lg-3'>
+                    <img id="ig1" src="item3.jpg" class='img-fluid'>
+                </div>
+
+                <div class='col-lg-3'>
+                    <img id="ig1" src="item4.jpg" class='img-fluid'>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section style="margin-top: 40px;">
+    <div class='categories'>WE PROVIDE SERVICE AT <hr width="50%" ></div>
+    <div class="wrapper">
+        <div class='container'>
+            <div class="row">
+                <div class='col-lg-3'>
+                    <span class="border border-dark" >VARANASI</br></br>
+                        <a href="#" class='btn btn-outline-warning' id="submit4" style=" font-family: timesRoman;"  data-toggle="modal" data-target="#myModal10">view more</a></span>
+                </div>
+
+                <div class='col-lg-3'>
+                    <span class="border border-danger">RANCHI</br></br>
+                        <a href="#" class='btn btn-outline-warning' id="submit4" style=" font-family: timesRoman;"  data-toggle="modal" data-target="#myModal9">view more</a></span>
+                </div>
+
+                <div class='col-lg-3'>
+                    <span class="border border-success">PATNA</br></br>
+                       <a href="#" class='btn btn-outline-warning' id="submit4" style=" font-family: timesRoman;"  data-toggle="modal" data-target="#myModal8">view more</a></span>
+                </div>
+
+                <div class='col-lg-3'>
+
+                    <span class="border border-info">JAMSHEDPUR</br></br>
+                        <a href="#" class='btn btn-outline-warning' id="submit4" style=" font-family: timesRoman;"  data-toggle="modal" data-target="#myModal7">view more</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="margin-top:40px;background-color: lightgray">
+    <div class="tracking">
+        <div class="container">
+            <div class='row'>
+                <div class='col-lg-6'>
+                   <center><img src="item5.jpg" class='img-fluid' id='rotate' style='border-radius: 50%;width: 270px;'></center> 
+                </div>
+                <div class='col-lg-6'>
+                    </br><h2 style='font-family: georgia'>Track your Food In A Smarter Way</h2></br>
+                    <p>Track your Food with our ‘Track My Food’ feature and know the exact location in real-time.Stay informed and keep your family informed!</p></br>
+                    <a href="#" class='btn btn-outline-dark' id="submit5">Know More</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section>
+    <div class='gurantee'>
+        <center>
+            <img src='itme11.png'>
+            <div class='gurantee-header'>OUR PROMISES AND GURANTEES</div>
+        </center>
+    </div>
+    <div class='promising'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-lg-3'>
+                    <div class="card">
+                        <div class="card bg-light text-dark">
+                           <div class="card-body">
+                               <center>
+                                   <img src='itme7.png' class='img-fluid'></br></br>
+                                   <div style='font-family: TimesRoman'>MAXIMUM CHOICE</br></br></div>
+                                   <div style='font-family: cursive;'>We give you the widest number of food variety options across different numbers of cities.</div>
+                               </center>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3'>
+                    <div class="card">
+                        <div class="card bg-light text-dark">
+                           <div class="card-body">
+                               <center>
+                                   <img src='item8.png' class='img-fluid'></br></br>
+                                   <div style='font-family: TimesRoman'>SUPERIOR CUSTOMER SERVICE</br></br></div>
+                                   <div style='font-family: cursive;'>We provide 24*7 hours customer service</div>
+                               </center>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-3'>
+                    <div class="card">
+                        <div class="card bg-light text-dark">
+                           <div class="card-body">
+                               <center>
+                                   <img src='itme9.png' class='img-fluid'></br></br>
+                                   <div style='font-family: TimesRoman'>SUPER DISCOUNT</br></br></div>
+                                   <div style='font-family: cursive;'>We always give you the lowest price with the best partner offers</div>
+                               </center>
+                           </div>
+                       </div>
+                    </div>
+                </div> 
+
+                <div class='col-lg-3'>
+                    <div class="card">
+                        <div class="card bg-light text-dark">
+                           <div class="card-body">
+                               <center>
+                                   <img src='itme10.png' class='img-fluid'></br></br>
+                                   <div style='font-family: TimesRoman'>BENEFITS</br></br></div>
+                                   <div style='font-family: cursive;'>We take care of your food items beyond prices by providing you with innovative and unique benefits.</div>
+                               </center>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id='modaljsr'>
+  <div class="modal fade" id="myModal7" style='margin-top:40px;'>
+     <div class="modal-dialog" style='width:850px;margin-top:40px;'>
+        <div class="modal-content" style='width:850px;margin-top:40px;'>
+
+               <!-- Modal Header -->
+                <div class="modal-header">
+                   <h4 class="modal-title" style='font-family: Courier New;color:green;font-weight: bold;font-style: italic;'>OUR LINK WITH JAMSHEDPUR</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                  <!-- Modal body -->
+                 <div class="modal-body" style='font-style:italic;'>
+                      Jamshedpur is a large city set between the Subarnarekha and Kharkai rivers in the east Indian state of Jharkhand. It’s known for huge, tree-lined Jubilee Park, where the Tata Steel Zoological Park has resident species including tigers and leopards. To the east, the hilltop Bhuvaneshwari Temple has an elaborate 5-story entrance tower. North of the city, elephants roam through the forests at Dalma Wildlife Sanctuary.
+                    </br></br>
+                       Our link with various hotels are:-
+                     </br><div style='font-weight: bold'>1. TADKA RESTAURANT</div>
+                     </br><div style='font-weight: bold'>2. KAVERI RESTAURANT</div>
+                     </br><div style='font-weight: bold'>3. SHIVAY RESTAURANT</div>
+                     </br><div style='font-weight: bold'>4 GRAND RESTAURANT</div>
+
+                 </div>
+
+                
+                
+        </div>
+     </div>
+
+</section>
+
+<section  id='modalptn'>
+
+     <div class="modal fade" id="myModal8" style='margin-top:40px;'>
+     <div class="modal-dialog" style='width:850px;margin-top:40px;'>
+        <div class="modal-content" style='width:850px;margin-top:40px;'>
+
+               <!-- Modal Header -->
+                <div class="modal-header">
+                   <h4 class="modal-title" style='font-family: Courier New;color:green;font-weight: bold;font-style: italic;'>OUR LINK WITH PATNA</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                  <!-- Modal body -->
+                 <div class="modal-body" style='font-style:italic;'>
+                     Patna is an ancient city that sprawls along the south bank of the Ganges River in Bihar, northeast India. The state capital, it’s home to Bihar Museum, a contemporary landmark exhibiting bronze sculptures and old coins from the region. Nearby, Indo-Saracenic–style Patna Museum displays a casket believed to contain the Buddha’s ashes. Close to the river, the Golghar is a domed colonial granary overlooking the city.
+                    </br></br>
+                       Our link with various hotels are:-
+                     </br><div style='font-weight: bold'>1. ZODIAC RESTAURANT</div>
+                     </br><div style='font-weight: bold'>2. SIMBA RESTAURANT</div>
+                     </br><div style='font-weight: bold'>3. RAJSHREE RESTAURANT</div>
+                     </br><div style='font-weight: bold'>4 CRUSE RESTAURANT</div>
+
+                 </div>
+
+                
+                
+        </div>
+     </div>
+</section>
+
+
+
+
+
+<section id='modalrch'>
+ <div class="modal fade" id="myModal9" style='margin-top:40px;'>
+     <div class="modal-dialog" style='width:850px;margin-top:40px;'>
+        <div class="modal-content" style='width:850px;margin-top:40px;'>
+
+               <!-- Modal Header -->
+                <div class="modal-header">
+                   <h4 class="modal-title" style='font-family: Courier New;color:green;font-weight: bold;font-style: italic;'>OUR LINK WITH RANCHI</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                  <!-- Modal body -->
+                 <div class="modal-body" style='font-style:italic;'>
+                     Ranchi is the state capital of Jharkhand in northeast India. At the top of central Ranchi Hill, Pahari Mandir is a Hindu temple dedicated to Shiva, with panoramic city views. Nearby, leafy Nakshatra Van is a large park with trees planted to represent stars of the zodiac. The region is known for its tribal heritage, and exhibits at the Tribal Museum include musical instruments and jewelry from the state’s many tribes.
+                    </br></br>
+                       Our link with various hotels are:-
+                     </br><div style='font-weight: bold'>1. HUMTUM RESTAURANT</div>
+                     </br><div style='font-weight: bold'>2. SILGA RESTAURANT</div>
+                     </br><div style='font-weight: bold'>3. TRUSHREE RESTAURANT</div>
+                     </br><div style='font-weight: bold'>4 STORM RESTAURANT</div>
+
+                 </div>
+
+                
+                
+        </div>
+     </div>
+  
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id='modalvrn'>
+ <div class="modal fade" id="myModal10" style='margin-top:40px;'>
+     <div class="modal-dialog" style='width:850px;margin-top:40px;'>
+        <div class="modal-content" style='width:850px;margin-top:40px;'>
+
+               <!-- Modal Header -->
+                <div class="modal-header">
+                   <h4 class="modal-title" style='font-family: Courier New;color:green;font-weight: bold;font-style: italic;'>OUR LINK WITH VARANASI</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                  <!-- Modal body -->
+                 <div class="modal-body" style='font-style:italic;'>
+                     Varanasi is a city in the northern Indian state of Uttar Pradesh dating to the 11th century B.C. Regarded as the spiritual capital of India, the city draws Hindu pilgrims who bathe in the Ganges River’s sacred waters and perform funeral rites. Along the city's winding streets are some 2,000 temples, including Kashi Vishwanath, the “Golden Temple,” dedicated to the Hindu god Shiva.
+                    </br></br>
+                       Our link with various hotels are:-
+                     </br><div style='font-weight: bold'>1. GLOW RESTAURANT</div>
+                     </br><div style='font-weight: bold'>2. CYCLONE RESTAURANT</div>
+                     </br><div style='font-weight: bold'>3. TINDA RESTAURANT</div>
+                     </br><div style='font-weight: bold'>4 CURLY RESTAURANT</div>
+
+                 </div>
+
+                
+                
+        </div>
+     </div>
+  
+</section>
+
+
+
+
+
+
+<section>
+<div class="modal fade" id="myModalhistory" style='margin-top:40px;'>
+     <div class="modal-dialog" style='width:850px;margin-top:40px;'>
+        <div class="modal-content" style='width:850px;margin-top:40px;'>
+
+               <!-- Modal Header -->
+                <div class="modal-header">
+                   <h4 class="modal-title" style='font-family: Courier New;color:green;font-weight: bold;font-style: italic;'>YOUR ORDERS LIST ARE:---</h4>
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                  <!-- Modal body -->
+                 <div class="modal-body" style='font-style:italic;height: 250px;width:850px;
+    overflow-x: auto;'>
+
+                       <% if(ses.length==6){%>
+                          <div class='row' style='text-align: center;'>
+                                 <div class='col-lg-12'>
+                                 <table class="  table-hover table">
+                                   <thead style="background-color: lightgreen;" >
+                                      <tr>
+                                         <th scope="col">Item Name</th>
+                                         <th scope="col">Order Date</th>
+                                         <th scope="col">Order Time</th>
+                                         <th scope="col">Resturant</th>
+                                         <th scope="col">Location</th>
+                                         <th scope="col">Status</th>
+                                         <th scope="col">Supplier_Contact</th>
+                                  
+                                     </tr>
+                                    </thead>
+                                     <% for(var i=0;i<foundlist.length;i++){ %>
+                                         <tbody id="myTable">
+                                            <tr>
+                                             
+                                               <td><%=i%>.<%=foundlist[i].item_Name %></td>
+                                                <td> <%=foundlist[i].OrderDate %></td>
+                                               <td><%=foundlist[i].Ordertime %></td>
+                                               <td><%=foundlist[i].rest_Name %></td>
+                                                <td><%=foundlist[i].city %></td>
+                                               <td  style='color:red;font-weight:bold;'><%=foundlist[i].processing %></td>
+                                               <td><%=foundlist[i].deliveryboycontact%></td>
+                                             
+                                             </tr>  
+                                      <%} %>
+
+                                       </tbody>
+                                 </table>
+                                 </div>
+
+                                
+                 
+               
+                           </div></br>
+
+                       <%} else {%>
+
+                        <%}%>
+    
+                 </div>
+
+                
+                
+        </div>
+     </div>
+</section>
+
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5d0eb8b836eab9721118bff7/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+ 
+<%- include('footer') -%>
+
+
+
+
+
+
+<script>
+  
+
+
+
+
+
+
+
+     document.getElementById("register").style.display='none';
+
+     function showRegistrationForm()
+     {
+        document.getElementById("register").style.display='block'; 
+        document.getElementById("login").style.display='none';
+     }
+
+     function showLoginForm()
+     {
+        document.getElementById("register").style.display='none'; 
+        document.getElementById("login").style.display='block';
+     }
+
+     function register()
+     {
+        fullname2=$('#fullname2').val();
+        email2=$('#email2').val();
+        contact2=$('#contact2').val();
+        address2=$('#address2').val();
+        password2=$('#password2').val();
+        city2=$("#city2").val();
+
+        //perform validation
+
+
+        if(password2.length<8)
+        {
+          alert('your password should be at least 8 characters length');
+          return false;
+        }
+
+        else if(contact2.length<10)
+        {
+           alert('your contact should contain 10 digits');
+           return false;
+        }
+
+        $.post('/customerRegister',{fullname2:fullname2,email2:email2,contact2:contact2,password2:password2,address2:address2,city2:city2},function(data)
+        {
+           if(data=='error')
+           {
+             window.location.href='/error';
+           }
+           else if(data==='success')
+           {
+              window.location.href='/success'
+           }
+
+           else if(data==='sorry')
+           {
+            alert('sorry this email has already been taken');
+           }
+        })
+
+     }
+
+
+     function login()
+     {
+     
+        email1=$("#email1").val();
+        password1=$("#password1").val();
+        $.post('/customerLogin',{email1:email1,password1:password1},function(data){
+             if(data==='notmatched')
+                 {
+                  alert('password is wrong');
+                 }
+                 if(data==='success')
+                 {
+                  window.location.href='/';
+                 }
+
+                 if(data==='verify')
+                 {
+                   window.location.href='/firstverify'
+                 }
+          })
+     }
+
+
+     function search()
+     {
+       select_menu=$('#select_menu').val();
+
+       $.post('/search',{select_menu:select_menu},function(data){
+          if(data==='varanasi')
+          {
+            window.location.href='/varanasi'
+          }
+
+          if(data==='jamshedpur')
+          {
+            window.location.href='/jamshedpur'
+          }
+
+          if(data==='patna')
+          {
+            window.location.href='/patna';
+          }
+
+          if(data==='ranchi')
+          {
+            window.location.href='/ranchi'
+          }
+       })
+     }
+</script>    
+
+</body>
+</html>
